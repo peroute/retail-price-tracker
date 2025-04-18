@@ -1,32 +1,12 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class macyScrapperV1 {
-    public static void main(String[] args) throws IOException {
-        Scanner scan = new Scanner(System.in);
-        String url;
-        double targetPrice;
-
-        //Base url and price
-        //        url without reduction:
-        //        url with https://www.macys.com/shop/product/sun-stone-mens-garment-dyed-cargo-jogger-pants-created-for-macys?ID=18241730&swatchColor=Tank
-        url = "https://www.macys.com/shop/product/nike-mens-calm-slide-sandals-from-finish-line?ID=15469912&swatchColor=Khaki";
-        targetPrice = 31.2;
-
-        //url = getUserUrl(scan);
-        //targetPrice = getUserTargetPrice(scan);
-
-        macyScrapper(url,targetPrice);
-
-
-    }
+public class macyWebScrapper {
 
     public static String getUserUrl(Scanner scanner){
 
