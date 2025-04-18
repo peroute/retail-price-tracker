@@ -8,5 +8,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jsoup-1.13.1" level="project" />
+    <orderEntry type="library" name="jakarta.mail-2.0.1" level="project" />
+    <orderEntry type="library" name="jakarta.activation-api-2.0.1" level="project" />
+    <orderEntry type="library" name="jakarta.activation-2.0.1" level="project" />
   </component>
 </module>
