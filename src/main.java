@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class main {
@@ -6,7 +8,7 @@ public class main {
         Scanner scan = new Scanner(System.in);
         String url;
         double targetPrice;
-
+        Map<String, Double> data = new HashMap<>();
         //Base url and price
         //        url without reduction:
         //        url with https://www.macys.com/shop/product/sun-stone-mens-garment-dyed-cargo-jogger-pants-created-for-macys?ID=18241730&swatchColor=Tank
@@ -16,7 +18,12 @@ public class main {
         //url = macyWebScrapper.getUserUrl(scan);
         //targetPrice = macyWebScrapper.getUserTargetPrice(scan);
 
+        dataSaving.saveInput(url,targetPrice);
+        data = dataSaving.getData();
+        System.out.println(data);
         macyWebScrapper.macyScrapper(url,targetPrice);
+
+
 
 
     }
