@@ -2,26 +2,26 @@ import jakarta.mail.*;
 import jakarta.mail.internet.*;
 import java.util.Properties;
 
-
 public class emailSender {
-    public static void main(String[] args) {
 
-        sendEmail("work.harder.than.u.think@gmail.com","pricetracker123456@gmail.com");
-    }
-    public static void sendEmail(String emailAdress, String from){
+    public static void sendEmail(Item item){
         Session currentsession = createSession();
         try {
             Message message = new MimeMessage(currentsession);
-            message.setFrom(new InternetAddress(from));
+            message.setFrom(new InternetAddress("pricetracker123456@gmail.com"));
             message.setRecipients(
                     Message.RecipientType.TO,
-                    InternetAddress.parse(emailAdress)
+                    InternetAddress.parse(item.getEmail())
             );
-            message.setSubject("JavaMail Test");
-            message.setText("Hello! This is a test email sent using JavaMail.");
+            message.setSubject("Product reached target price!");
+            message.setText("Congratulations! One of the products you’re watching has reached your target price of" + item.getTargetPrice()
+                    +
+
+                    "Check it out now before it sells out:\n - " +
+                    item.getUrl()
+                    + "\nHappy shopping! \nPriceTracker ");
 
             Transport.send(message);
-            System.out.println("Email sent!");
 
         } catch (MessagingException e) {
             e.printStackTrace();
@@ -29,7 +29,7 @@ public class emailSender {
 
     }
 
-    public static Session createSession(){
+    private static Session createSession(){
         final String username = "pricetracker123456@gmail.com";
         final String password = "jber croa slkl eozd";
 

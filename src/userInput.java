@@ -1,20 +1,22 @@
+import CustomExceptions.PriceNotFoundException;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class userInput {
-    public static String userChoice(){
+    public static String userChoice(Scanner scanner){
         String choice;
-        Scanner scanner = new Scanner(System.in);
-        choice =scanner.next().toLowerCase();
-        System.out.println("would you like to check your items / add an item to the list " +
-                "/ see current list (type: [c] for check, [a] for add, [s] to see");
 
-        if(choice.equals("c") || choice.equals("a") || choice.equals("s")) {
+        System.out.print("would you like to check your items / add an item to the list " +
+                "/ see current list (type: [c] for check, [a] for add, [s] to see --> ");
+        choice = scanner.next();
+        if(choice.equalsIgnoreCase("c") || choice.equalsIgnoreCase("a") || choice.equalsIgnoreCase("s")) {
             return choice;
         } else{
             System.out.println("Please make sure to enter a valid option");
-            userChoice();
+            return userChoice(scanner);
         }
-        return "error";
+
     }
 
     public static String getUserUrl(Scanner scanner){
@@ -31,5 +33,19 @@ public class userInput {
         return targetPrice;
 
     }
+    public static String getUserEmail(Scanner scanner){
+        System.out.print("Enter Email adress: ");
+        return scanner.nextLine();
 
+    }
+    public static void addMore(Scanner scanner) throws PriceNotFoundException, IOException {
+        System.out.print("would you like to add another item? [y/n]");
+        String answer = scanner.next();
+        if (answer.equalsIgnoreCase("y")){
+            Choice.addItem();
+        }
+        else {
+            Choice.checkItems();
+        }
+}
 }

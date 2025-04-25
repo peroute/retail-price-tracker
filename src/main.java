@@ -1,29 +1,57 @@
+import CustomExceptions.PriceNotFoundException;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-/*
-public class main {
-    public static void main(String[] args) throws IOException {
-        Scanner scan = new Scanner(System.in);
-        String choice;
-        String url;
-        double targetPrice;
-        Map<String, Double> data = new HashMap<>();
 
-        sout.greetingUser();
-        choice = userInput.userChoice();
-        if (choice.equals("c")){
-            //check
-        } else if (choice.equals("a")) {
-            //add
-        } else if (choice.equals("s")) {
+import static CustomExceptions.macyWebScrapper.macyScrapper;
+
+public class main {
+    public static void main(String[] args) throws IOException, PriceNotFoundException {
+        Scanner scanner = new Scanner(System.in);
+        String choice;
+
+
+
+
+        System.out.println("welcome to the price tracker! \nThis program will help you keep track of sales of your favorite item at macys."
+                + "\nyou will need the url of the product (make sure to click on the product and paste the correct url)"
+                );
+
+
+        choice = userInput.userChoice(scanner);
+        if (choice.equalsIgnoreCase("c")){
+            Choice.checkItems();
+        } else if (choice.equalsIgnoreCase("a")) {
+            Choice.addItem();
+        } else if (choice.equalsIgnoreCase("s")) {
             // see
-        } else {
-            System.out.println("An error has occurred when getting user choice");
-            System.exit(1);
+            Choice.seeItemList();
+
         }
 
+    }
+
+
+    }
+
+        /*
+
+Boolean truth;
+
+
+        System.out.println("checking current list" );
+        Choice.seeItemList();
+
+        System.out.println("testing remove method" );
+        Choice.addItem();
+        //https://www.macys.com/shop/product/donna-karan-new-york-womens-belted-sleeveless-shirtdress?ID=20784838&CategoryID=5449still
+        //12
+        System.out.println();
+        Choice.seeItemList();
+*/
 
         /*
 
