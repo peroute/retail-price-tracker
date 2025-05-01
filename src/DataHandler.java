@@ -1,7 +1,6 @@
 import CustomExceptions.PriceNotFoundException;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DataHandler {
@@ -45,7 +44,6 @@ public class DataHandler {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             return (ArrayList<Item>) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            // Return empty list if there is an error
             return new ArrayList<Item>();
         }
     }

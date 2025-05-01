@@ -14,10 +14,10 @@ public class emailSender {
                     InternetAddress.parse(item.getEmail())
             );
             message.setSubject("Product reached target price!");
-            message.setText("Congratulations! One of the products you’re watching has reached your target price of" + item.getTargetPrice()
+            message.setText("Congratulations! One of the products you’re watching has reached your target price of " + item.getTargetPrice()
                     +
 
-                    "Check it out now before it sells out:\n - " +
+                    "\n Check it out now before it sells out: " +
                     item.getUrl()
                     + "\nHappy shopping! \nPriceTracker ");
 

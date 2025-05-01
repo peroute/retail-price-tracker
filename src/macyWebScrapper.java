@@ -18,12 +18,10 @@ public class macyWebScrapper {
      *Scrapes the current price of a product from a Macy's product page using the given URL.
      *<p>
      *It connects to the page, extracts the price using Jsoup and regex,
-     *and returns it as a double. If no price is found, it throws a custom exception.
+     *and returns it as a double.
      *
      * @param url
-     * @return currentPrice (on website)
-     * @throws IOException
-     * @throws PriceNotFoundException
+     * @return currentPrice
      */
     public static double macyScrapper(String url) throws NullPointerException, IOException, PriceNotFoundException {
         Document doc = Jsoup.connect(url).get();

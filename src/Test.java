@@ -3,12 +3,12 @@ import CustomExceptions.PriceNotFoundException;
 import CustomExceptions.macyWebScrapper;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Test {
     public static void main(String[] args) throws PriceNotFoundException, IOException {
 
         testMacysScrapper();
-
 
     }
     public static void testMacysScrapper() throws IOException, PriceNotFoundException{

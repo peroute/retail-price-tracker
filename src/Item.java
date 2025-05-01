@@ -24,8 +24,6 @@ public class Item implements Serializable {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        //if (obj == null || getClass() != obj.getClass()) return false;
-
         Item other = (Item) obj;
 
         return this.url.equals(other.url) && this.targetPrice == other.targetPrice;
