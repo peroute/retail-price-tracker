@@ -17,7 +17,7 @@ public class emailSender {
             message.setText("Congratulations! One of the products you’re watching has reached your target price of " + item.getTargetPrice()
                     +
 
-                    "\n Check it out now before it sells out: " +
+                    "\nCheck it out now before it sells out: " +
                     item.getUrl()
                     + "\nHappy shopping! \nPriceTracker ");
 

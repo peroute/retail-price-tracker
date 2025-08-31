@@ -1,4 +1,5 @@
 import CustomExceptions.PriceNotFoundException;
+import javafx.scene.control.Alert;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -16,8 +17,13 @@ public class DataHandler {
                 saveList(currentList);
             }
             else {
-                System.out.println("You already entered this item at this price target. Please enter another item");
-                Choice.addItem();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("You already entered this item at this price target.");
+                alert.setContentText("Please enter another item");
+                alert.showAndWait();
+                
+
             }
         }
 

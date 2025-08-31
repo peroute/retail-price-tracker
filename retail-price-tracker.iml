@@ -11,5 +11,6 @@
     <orderEntry type="library" name="jakarta.mail-2.0.1" level="project" />
     <orderEntry type="library" name="jakarta.activation-api-2.0.1" level="project" />
     <orderEntry type="library" name="jakarta.activation-2.0.1" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
