@@ -5,7 +5,12 @@ import org.jsoup.nodes.Document;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class macyWebScrapper {
@@ -24,15 +29,24 @@ public class macyWebScrapper {
      * @return currentPrice
      */
     public static double macyScrapper(String url) throws NullPointerException, IOException, PriceNotFoundException {
-        Document doc = Jsoup.connect(url).get();
+        System.setProperty("webdriver.chrome.driver", "lib/chromedriver-win64/chromedriver.exe");
 
-        // Extract current price and old price if there is a discount
-        String currentPriceStr = doc.selectFirst("div.price-wrapper span.base-price").text();
+        WebDriver driver = new ChromeDriver();
+
+        String currentPriceStr = "";
+        try {
+            driver.get(url);
+            WebElement priceElement = driver.findElement(By.cssSelector("div.price-wrapper span.base-price"));
+
+            currentPriceStr = priceElement.getText();
+
+        } finally {
+            driver.quit();
+        }
 
         // reg ex to get the price
         Pattern pattern = Pattern.compile("\\$\\S+");
         Matcher matcher1 = pattern.matcher(currentPriceStr);
-
         // return the current price
         if(matcher1.find()){
             // gets the current price and convert it to Double
@@ -41,6 +55,8 @@ public class macyWebScrapper {
             //System.out.println("There is no price for this item an error occured");
             throw new PriceNotFoundException("There is no price for this item.");
         }
+
+
 
     }
 
