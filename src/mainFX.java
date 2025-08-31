@@ -111,7 +111,7 @@ public class mainFX extends Application {
 
         // Add nodes to pane
         mainPane.setCenter(topBox);
-        Image icon = new Image("file:icon.png");
+        Image icon = new Image("file:img/app/icon.png");
         primaryStage.getIcons().add(icon);
 
         primaryStage.setTitle("Macys price tracker");
@@ -163,7 +163,7 @@ public class mainFX extends Application {
 
 
         // Add delete image button
-        Image delete = new Image("file:delete.png");
+        Image delete = new Image("file:img/app/delete.png");
 
         // convert image to imview
         ImageView deleteIV = new ImageView(delete);
@@ -208,7 +208,7 @@ public class mainFX extends Application {
         hBox.setPrefHeight(50);
         hBox.setSpacing(40);
         // Adding back button
-        Image back = new Image("file:back.png");
+        Image back = new Image("file:img/app/back.png");
         // convert Image to imview
         ImageView backIV = new ImageView(back);
         backIV.setFitHeight(50);
