@@ -19,7 +19,7 @@ A Java-based web scraping application that monitors Macy's product prices and se
 
 ### Item List Management
 <img src="https://github.com/peroute/retail-price-tracker/blob/master/img/readme/screen2.png" alt="Add Items Screen" width="300">
-*View and manage your tracked items with current prices and targets*
+**View and manage your tracked items with current prices and targets**
 
 ## Tech Stack
 
